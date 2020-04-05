@@ -1,13 +1,11 @@
 <?php
-
 /**
  * Plugin Name: WP Realiable Cookie Bar
- * Plugin URI: https://github.com/
+ * Plugin URI: https://github.com/sergioloporto/WP-Reliable-Cookie-Bar/
  * Description: A customizable cookie bar
  * Version: 0.2
  * Author: Sergio Lo Porto
  * Author URI: https://github.com/sergioloporto
- * Text Domain: envato-market
  */
 
 
