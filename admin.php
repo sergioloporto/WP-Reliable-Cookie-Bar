@@ -33,21 +33,55 @@ function wprcb_api_settings_init()
 		'wprcbPlugin',
 		'wprcb_api_wprcbPlugin_section'
 	);
-}
 
+	add_settings_field(
+		'wprcb_api_number_field_barHeight',
+		__('Cookie bar height', 'wprbc'),
+		'wprcb_api_number_field_barHeight_render',
+		'wprcbPlugin',
+		'wprcb_api_wprcbPlugin_section',
+		array('Choose a value in pixels')
+	);
+
+
+	//Button section
+	// add_settings_section(
+	// 	'wprcb_api_wprcbPlugin_section',
+	// 	__('Button properties', 'wprbc'),
+	// 	'wprcb_api_button_settings_section_callback',
+	// 	'wprcbPlugin'
+	// );
+
+// 	add_settings_field(
+// 		'wprcb_api_color_field_button_backgroundColor',
+// 		__('Button background color', 'wprbc'),
+// 		'wprcb_api_color_field_button_backgroundColor_render',
+// 		'wprcbPlugin',
+// 		'wprcb_api_wprcbPlugin_section'
+// 	);
+}
 
 function wprcb_api_text_field_cookieMessage_render()
 {
 	$options = get_option('wprcb_api_settings');
 ?>
-	<input type='text' name='wprcb_api_settings[wprcb_api_text_field_cookieMessage]' value='<?php echo $options['wprcb_api_text_field_cookieMessage']; ?>' placeholder="This site uses internal and external cookies provide and improve our services. By using our site, you grant consent to cookies." >
+	<input type='text' name='wprcb_api_settings[wprcb_api_text_field_cookieMessage]' value='<?php echo $options['wprcb_api_text_field_cookieMessage']; ?>' placeholder="This site uses internal and external cookies provide and improve our services. By using our site, you grant consent to cookies.">
 <?php
 }
 
-function wprcb_api_color_field_backgroundColor_render(  ) {
-    $options = get_option( 'wprcb_api_settings' );
-	?>
-	<input type="color" id="favcolor" name="wprcb_api_settings[wprcb_api_color_field_backgroundColor]" value="#000" > 
+function wprcb_api_color_field_backgroundColor_render()
+{
+?>
+	<input type="color" id="favcolor" name="wprcb_api_settings[wprcb_api_color_field_backgroundColor]" value="#000">
+<?php
+}
+
+function wprcb_api_number_field_barHeight_render($args)
+{
+	$options = get_option('wprcb_api_settings');
+?>
+	<input type='number' name='wprcb_api_settings[wprcb_api_number_field_barHeight]' value='<?php echo $options['wprcb_api_number_field_barHeight']; ?>'>
+	<p class="description wprcb-height"> <?php echo $args[0] ?> </p>
 <?php
 }
 
@@ -55,6 +89,8 @@ function wprcb_api_settings_section_callback()
 {
 	echo __('In this page you can change text and the visual aspect of the WP Reliable Cookie Bar', 'wprcb');
 }
+
+
 
 
 /** Step 3. */
