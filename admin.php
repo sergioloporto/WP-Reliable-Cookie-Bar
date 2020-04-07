@@ -111,7 +111,7 @@ function wprcb_options()
 	}
 ?>
 	<form action='options.php' method='post'>
-		<h2>Sitepoint Settings API Admin Page</h2>
+		<h2>WP Reliable Cookie Bar</h2>
 
 		<?php
 		settings_fields('wprcbPlugin');
