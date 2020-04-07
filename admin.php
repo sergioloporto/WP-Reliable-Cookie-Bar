@@ -44,21 +44,21 @@ function wprcb_api_settings_init()
 	);
 
 
-	//Button section
-	// add_settings_section(
-	// 	'wprcb_api_wprcbPlugin_section',
-	// 	__('Button properties', 'wprbc'),
-	// 	'wprcb_api_button_settings_section_callback',
-	// 	'wprcbPlugin'
-	// );
+	// Button section
+	add_settings_section(
+		'wprcb_api_wprcbPlugin_section',
+		__('Button properties', 'wprbc'),
+		'wprcb_api_button_settings_section_callback',
+		'wprcbPluginButton'
+	);
 
-// 	add_settings_field(
-// 		'wprcb_api_color_field_button_backgroundColor',
-// 		__('Button background color', 'wprbc'),
-// 		'wprcb_api_color_field_button_backgroundColor_render',
-// 		'wprcbPlugin',
-// 		'wprcb_api_wprcbPlugin_section'
-// 	);
+	add_settings_field(
+		'wprcb_api_color_field_button_backgroundColor',
+		__('Button background color', 'wprbc'),
+		'wprcb_api_color_field_button_backgroundColor_render',
+		'wprcbPluginButton',
+		'wprcb_api_wprcbPlugin_section'
+	);
 }
 
 function wprcb_api_text_field_cookieMessage_render()
@@ -85,11 +85,21 @@ function wprcb_api_number_field_barHeight_render($args)
 <?php
 }
 
+function wprcb_api_color_field_button_backgroundColor_render()
+{
+?>
+	<input type="color" id="favcolor" name="wprcb_api_settings[wprcb_api_color_field_button_backgroundColor]" value="#ffdbcd">
+<?php
+}
+
 function wprcb_api_settings_section_callback()
 {
 	echo __('In this page you can change text and the visual aspect of the WP Reliable Cookie Bar', 'wprcb');
 }
-
+function wprcb_api_button_settings_section_callback()
+{
+	echo __('Button options', 'wprcb');
+}
 
 
 
@@ -106,6 +116,9 @@ function wprcb_options()
 		<?php
 		settings_fields('wprcbPlugin');
 		do_settings_sections('wprcbPlugin');
+		do_settings_sections('wprcbPluginButton');
+		settings_fields('wprcbPluginButton');
+
 		submit_button();
 		?>
 

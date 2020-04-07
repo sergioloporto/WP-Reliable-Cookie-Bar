@@ -27,7 +27,7 @@ function wprcb_inject_html_into_footer()
     $text_to_display = $options['wprcb_api_text_field_cookieMessage'] ? $options['wprcb_api_text_field_cookieMessage'] : 'This site uses internal and external cookies provide and improve our services. By using our site, you grant consent to cookies.';
     $background_color = $options['wprcb_api_select_field_backgroundColor'] ? $options['wprcb_api_select_field_backgroundColor'] : '#000';
     $bar_height = $options['wprcb_api_number_field_barHeight'] ? $options['wprcb_api_number_field_barHeight'] : '80';
-    // $button_background_color = $options['wprcb_api_select_field_backgroundColor'] ? $options['wprcb_api_select_field_backgroundColor'] : '#ffdbcd';
+    $button_background_color = $options['wprcb_api_select_field_backgroundColor'] ? $options['wprcb_api_select_field_backgroundColor'] : '#ffdbcd';
 
 
     //echo '<p><script async="" defer="" src="//widget.getyourguide.com/v2/widget.js"></script></p>';
@@ -36,7 +36,7 @@ function wprcb_inject_html_into_footer()
   <div>
     <div class="wprcb-content">
       <p class="wprcb-text">{$text_to_display}</p>
-      <a class="accept-button" id="accept-button" href="#" style="background-color:dodgerblue">Accept</a>
+      <a class="accept-button" id="accept-button" href="#" style="background-color:{$button_background_color}">Accept</a>
       <a class="learn-more" href="#" target="_blank" rel="nofollow">Learn more</a>
       </div>
   </div>
