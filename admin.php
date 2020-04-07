@@ -45,19 +45,20 @@ function wprcb_api_settings_init()
 
 
 	// Button section
+	register_setting('wprcbPlugin_Button', 'wprcb_api_settings_Button');
 	add_settings_section(
-		'wprcb_api_wprcbPlugin_section',
+		'wprcb_api_wprcbPlugin_section_button',
 		__('Button properties', 'wprbc'),
 		'wprcb_api_button_settings_section_callback',
-		'wprcbPluginButton'
+		'wprcbPlugin_Button'
 	);
 
 	add_settings_field(
 		'wprcb_api_color_field_button_backgroundColor',
 		__('Button background color', 'wprbc'),
 		'wprcb_api_color_field_button_backgroundColor_render',
-		'wprcbPluginButton',
-		'wprcb_api_wprcbPlugin_section'
+		'wprcbPlugin_Button',
+		'wprcb_api_wprcbPlugin_section_button'
 	);
 }
 
@@ -87,8 +88,9 @@ function wprcb_api_number_field_barHeight_render($args)
 
 function wprcb_api_color_field_button_backgroundColor_render()
 {
+	$button_options = get_option( 'wprcb_api_settings_Button' );
 ?>
-	<input type="color" id="favcolor" name="wprcb_api_settings[wprcb_api_color_field_button_backgroundColor]" value="#ffdbcd">
+	<input type="color" id="favcolor" name="wprcb_api_settings_Button[wprcb_api_color_field_button_backgroundColor]" value="<?php echo $button_options['wprcb_api_color_field_button_backgroundColor']; ?>">
 <?php
 }
 
@@ -116,8 +118,8 @@ function wprcb_options()
 		<?php
 		settings_fields('wprcbPlugin');
 		do_settings_sections('wprcbPlugin');
-		do_settings_sections('wprcbPluginButton');
-		settings_fields('wprcbPluginButton');
+		do_settings_sections('wprcbPlugin_Button');
+		settings_fields('wprcbPlugin_Button');
 
 		submit_button();
 		?>
