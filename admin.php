@@ -44,21 +44,22 @@ function wprcb_api_settings_init()
 	);
 
 
-	//Button section
-	// add_settings_section(
-	// 	'wprcb_api_wprcbPlugin_section',
-	// 	__('Button properties', 'wprbc'),
-	// 	'wprcb_api_button_settings_section_callback',
-	// 	'wprcbPlugin'
-	// );
+	// Button section
+	register_setting('wprcbPlugin_Button', 'wprcb_api_settings_Button');
+	add_settings_section(
+		'wprcb_api_wprcbPlugin_section_button',
+		__('Button properties', 'wprbc'),
+		'wprcb_api_button_settings_section_callback',
+		'wprcbPlugin_Button'
+	);
 
-// 	add_settings_field(
-// 		'wprcb_api_color_field_button_backgroundColor',
-// 		__('Button background color', 'wprbc'),
-// 		'wprcb_api_color_field_button_backgroundColor_render',
-// 		'wprcbPlugin',
-// 		'wprcb_api_wprcbPlugin_section'
-// 	);
+	add_settings_field(
+		'wprcb_api_color_field_button_backgroundColor',
+		__('Button background color', 'wprbc'),
+		'wprcb_api_color_field_button_backgroundColor_render',
+		'wprcbPlugin_Button',
+		'wprcb_api_wprcbPlugin_section_button'
+	);
 }
 
 function wprcb_api_text_field_cookieMessage_render()
@@ -85,11 +86,22 @@ function wprcb_api_number_field_barHeight_render($args)
 <?php
 }
 
+function wprcb_api_color_field_button_backgroundColor_render()
+{
+	$button_options = get_option( 'wprcb_api_settings_Button' );
+?>
+	<input type="color" id="favcolor" name="wprcb_api_settings_Button[wprcb_api_color_field_button_backgroundColor]" value="<?php echo $button_options['wprcb_api_color_field_button_backgroundColor']; ?>">
+<?php
+}
+
 function wprcb_api_settings_section_callback()
 {
 	echo __('In this page you can change text and the visual aspect of the WP Reliable Cookie Bar', 'wprcb');
 }
-
+function wprcb_api_button_settings_section_callback()
+{
+	echo __('Button options', 'wprcb');
+}
 
 
 
@@ -101,11 +113,14 @@ function wprcb_options()
 	}
 ?>
 	<form action='options.php' method='post'>
-		<h2>Sitepoint Settings API Admin Page</h2>
+		<h2>WP Reliable Cookie Bar</h2>
 
 		<?php
 		settings_fields('wprcbPlugin');
 		do_settings_sections('wprcbPlugin');
+		do_settings_sections('wprcbPlugin_Button');
+		settings_fields('wprcbPlugin_Button');
+
 		submit_button();
 		?>
 
