@@ -94,7 +94,7 @@ function wprcb_api_text_field_cookieMessage_render()
 {
 	$options = get_option('wprcb_api_settings');
 ?>
-	<input type='text' name='wprcb_api_settings[wprcb_api_text_field_cookieMessage]' value='<?php echo $options['wprcb_api_text_field_cookieMessage']; ?>' placeholder="This site uses internal and external cookies provide and improve our services. By using our site, you grant consent to cookies.">
+	<input type='text' name='wprcb_api_settings[wprcb_api_text_field_cookieMessage]' value='<?php echo sanitize_text_field($options['wprcb_api_text_field_cookieMessage']) ;?>' placeholder="This site uses internal and external cookies provide and improve our services. By using our site, you grant consent to cookies.">
 <?php
 }
 
@@ -102,7 +102,7 @@ function wprcb_api_color_field_backgroundColor_render()
 {
 	$options = get_option('wprcb_api_settings');
 ?>
-	<input type="color" id="favcolor" name="wprcb_api_settings[wprcb_api_color_field_backgroundColor]" value="<?php echo $options['wprcb_api_color_field_backgroundColor']; ?>">
+	<input type="color" id="favcolor" name="wprcb_api_settings[wprcb_api_color_field_backgroundColor]" value="<?php echo sanitize_text_field($options['wprcb_api_color_field_backgroundColor']); ?>">
 <?php
 }
 
@@ -110,7 +110,7 @@ function wprcb_api_color_field_textColor_render()
 {
 	$button_options = get_option( 'wprcb_api_settings' );
 ?>
-	<input type="color" id="favcolor" name="wprcb_api_settings[wprcb_api_color_field_textColor]" value="<?php echo $button_options['wprcb_api_color_field_textColor']; ?>">
+	<input type="color" id="favcolor" name="wprcb_api_settings[wprcb_api_color_field_textColor]" value="<?php echo sanitize_text_field($button_options['wprcb_api_color_field_textColor']); ?>">
 <?php
 }
 
@@ -119,7 +119,7 @@ function wprcb_api_number_field_barHeight_render($args)
 {
 	$options = get_option('wprcb_api_settings');
 ?>
-	<input type='number' name='wprcb_api_settings[wprcb_api_number_field_barHeight]' value='<?php echo $options['wprcb_api_number_field_barHeight']; ?>'>
+	<input type='number' name='wprcb_api_settings[wprcb_api_number_field_barHeight]' value='<?php echo sanitize_text_field($options['wprcb_api_number_field_barHeight']); ?>'>
 	<p class="description wprcb-height"> <?php echo $args[0] ?> </p>
 <?php
 }
@@ -129,7 +129,7 @@ function wprcb_api_boolean_showHide_border_render()
 	$options = get_option('wprcb_api_settings');
 ?>
 	<select id="show-hide-border" name="wprcb_api_settings[wprcb_api_boolean_showHide_border]">	
-		<option value="1" <?php selected( $options['wprcb_api_boolean_showHide_border'], 1 ); ?>>Show</option>
+		<option value="1" <?php selected( sanitize_text_field($options['wprcb_api_boolean_showHide_border']), 1 ); ?>>Show</option>
 		<option value="0" <?php selected( $options['wprcb_api_boolean_showHide_border'], 0 ); ?>>Hide</option>
 	</select>
 <?php
@@ -145,7 +145,7 @@ function wprcb_api_color_field_button_backgroundColor_render()
 {
 	$button_options = get_option( 'wprcb_api_settings' );
 ?>
-	<input type="color" id="favcolor" name="wprcb_api_settings[wprcb_api_color_field_button_backgroundColor]" value="<?php echo $button_options['wprcb_api_color_field_button_backgroundColor']; ?>">
+	<input type="color" id="favcolor" name="wprcb_api_settings[wprcb_api_color_field_button_backgroundColor]" value="<?php echo sanitize_text_field($button_options['wprcb_api_color_field_button_backgroundColor']); ?>">
 <?php
 }
 
@@ -153,7 +153,7 @@ function wprcb_api_color_field_button_textColor_render()
 {
 	$button_options = get_option( 'wprcb_api_settings' );
 ?>
-	<input type="color" id="favcolor" name="wprcb_api_settings[wprcb_api_color_field_button_textColor]" value="<?php echo $button_options['wprcb_api_color_field_button_textColor']; ?>">
+	<input type="color" id="favcolor" name="wprcb_api_settings[wprcb_api_color_field_button_textColor]" value="<?php echo sanitize_text_field($button_options['wprcb_api_color_field_button_textColor']); ?>">
 <?php
 }
 
