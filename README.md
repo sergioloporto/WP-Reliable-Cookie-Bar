@@ -1,5 +1,6 @@
 # WP Reliable Cookie Bar
-![WP Reliable Cookie Bar logo](../media/wp-reliable-cookie-bar-logo.png?raw=true =250x250)
+<img alt="WP Reliable Cookie Bar logo" src="../media/wp-reliable-cookie-bar-logo.png?raw=true" height="100" width="100" align="right">
+
 * Tags: cookie bar, cookies, eu cookies
 * Requires at least: 4.1
 * Tested up to: 5.3.2
