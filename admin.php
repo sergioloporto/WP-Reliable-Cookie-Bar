@@ -10,7 +10,7 @@ function wprcb_menu()
 
 function wprcb_api_settings_init()
 {
-	register_setting('wprcbPlugin', 'wprcb_api_settings');
+	register_setting('wprcbPlugin', 'wprcb_api_settings', 'wprcb_validate_options');
 	add_settings_section(
 		'wprcb_api_wprcbPlugin_section',
 		__('General settings', 'wprbc'),
@@ -157,9 +157,24 @@ function wprcb_api_color_field_button_textColor_render()
 <?php
 }
 
+$text_string = $options['wprcb_api_text_field_cookieMessage'];
+function wprcb_validate_options( $input ) {
+    $valid['wprcb_api_text_field_cookieMessage'] = preg_replace( '/[^a-zA-Z]/', '', $input['wprcb_api_text_field_cookieMessage'] );
+
+    if( $valid['wprcb_api_text_field_cookieMessage'] != $input['wprcb_api_text_field_cookieMessage'] ) {
+        add_settings_error(
+            'wprcb_api_text_field_cookieMessage',
+            'boj_myplugin_texterror',
+            'Incorrect value entered!',
+            'error'
+        );      
+    }
+
+    return $valid;
+}
 
 
-/** Step 3. */
+
 function wprcb_options()
 {
 	if (!current_user_can('manage_options')) {
