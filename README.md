@@ -1,4 +1,5 @@
 === WP Reliable Cookie Bar ===
+![alt text](../media/wp-reliable-cookie-bar.png?raw=true)
 Tags: cookie bar, cookies, eu cookies
 Requires at least: 4.1
 Tested up to: 5.3.2
