@@ -1,5 +1,5 @@
 # WP Reliable Cookie Bar
-![WP Reliable Cookie Bar logo](../media/wp-reliable-cookie-bar-logo.png?raw=true =250x250x)
+![WP Reliable Cookie Bar logo](../media/wp-reliable-cookie-bar-logo.png?raw=true =250x250)
 * Tags: cookie bar, cookies, eu cookies
 * Requires at least: 4.1
 * Tested up to: 5.3.2
