@@ -4,17 +4,15 @@
  * Plugin Name: WP Realiable Cookie Bar
  * Plugin URI: https://github.com/sergioloporto/WP-Reliable-Cookie-Bar/
  * Description: A customizable cookie bar
- * Version: 0.2
+ * Version: 1.0
  * Author: Sergio Lo Porto
  * Author URI: https://github.com/sergioloporto
+ * Text Domain: wprcb
  */
 
 
 defined('ABSPATH') or die('No script kiddies please!');
 include(plugin_dir_path(__FILE__) . 'admin.php');
-
-$GLOBALS['wprcb_policy'] = 'https://www.google.com';
-
 
 function wprcb_add_footer_styles()
 {
@@ -31,6 +29,8 @@ function wprcb_inject_html_into_footer()
   $text_color = $options['wprcb_api_color_field_textColor'] ? $options['wprcb_api_color_field_textColor'] : '#fff';
   $bar_height = $options['wprcb_api_number_field_barHeight'] ? $options['wprcb_api_number_field_barHeight'] : '80';
   $show_hide_border = $options['wprcb_api_boolean_showHide_border'] == 1 ? 'boder:none;' : 'border:inherit;';
+  $cookies_policy_url = $options['wprcb_api_text_field_cookiesURL'] ? $options['wprcb_api_text_field_cookiesURL'] : get_home_url();
+  $cookies_policy_anchor = $options['wprcb_api_text_field_cookiesAnchor'] ? $options['wprcb_api_text_field_cookiesAnchor'] : 'Learn more';
 
   //Button
   $button_options = get_option('wprcb_api_settings');
@@ -38,14 +38,13 @@ function wprcb_inject_html_into_footer()
   $button_text_color = $button_options['wprcb_api_color_field_button_textColor'] ? $button_options['wprcb_api_color_field_button_textColor'] : '#fff';
 
 
-  //echo '<p><script async="" defer="" src="//widget.getyourguide.com/v2/widget.js"></script></p>';
   echo <<<COOKIEBARHTML
   <div id="wprcb-cookie-bar" class="wprcb-cookie-bar" style="display: flex; background:{$background_color}; height:{$bar_height}px; {$show_hide_border}">
   <div>
     <div class="wprcb-content">
       <p class="wprcb-text" style="color:{$text_color};">{$text_to_display}</p>
       <a class="accept-button" id="accept-button" href="#" style="background-color:{$button_background_color};color:{$button_text_color}">Accept</a>
-      <a class="learn-more" href="#" target="_blank" rel="nofollow">Learn more</a>
+      <a class="learn-more" href="{$cookies_policy_url}" target="_blank" rel="nofollow">{$cookies_policy_anchor}</a>
       </div>
   </div>
 </div>
@@ -59,16 +58,10 @@ if (!localStorage.wpReliableCookieBarIsClosed) {
     wprcb.style.display="inherit";
   } else {
     wprcb.style.bottom="-500px";
-    // if (wprcb.style.height === '0px') {
-    //   wprcb.style.display="none";
-    // }
   }
 
   wprcbAcceptButton.addEventListener("click", () => {
-    wprcb.style.bottom="-500px";
-    // if (wprcb.style.height === '0px') {
-    //   wprcb.style.display="none";
-    // }    
+    wprcb.style.bottom="-500px";    
     localStorage.wpReliableCookieBarIsClosed = 'true';
   })
 

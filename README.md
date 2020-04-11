@@ -8,6 +8,7 @@
 * License: GPLv3
 * License URI: http://www.gnu.org/licenses/gpl.html
 * GitHub project:  [click](https://github.com/sergioloporto/WP-Reliable-Cookie-Bar/)
+* Text Domain: wprcb
 
 ## Features
 Tw WP Reliable Cookie Bar, when a user clicks on the "accept" button saves the information into the browser localStorage.
@@ -27,3 +28,6 @@ Many people would like to enhance some functionality, add new ones, etc. Feel fr
 
 ## Suggest new feature requests
 If you'd like the WP Reliable Cookie Bar to have new functionalities. You can open a new issue on GitHub.
+
+## Changelog
+* Version: 1.0: First release
