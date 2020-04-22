@@ -39,7 +39,7 @@ function wprcb_inject_html_into_footer()
 
 
   echo <<<COOKIEBARHTML
-  <div id="wprcb-cookie-bar" class="wprcb-cookie-bar" style="display: flex; background:{$background_color}; height:{$bar_height}px; {$show_hide_border}">
+  <div id="wprcb-cookie-bar" class="wprcb-cookie-bar" style="display: flex; align-items:center; justify-content:center; background:{$background_color}; height:{$bar_height}px; {$show_hide_border}">
   <div>
     <div class="wprcb-content">
       <p class="wprcb-text" style="color:{$text_color};">{$text_to_display}</p>
@@ -55,7 +55,7 @@ const wprcb = document.getElementById("wprcb-cookie-bar");
 const wprcbAcceptButton = document.getElementById("accept-button");
 
 if (!localStorage.wpReliableCookieBarIsClosed) {
-    wprcb.style.display="inherit";
+    wprcb.style.display="flex";
   } else {
     wprcb.style.bottom="-500px";
   }
