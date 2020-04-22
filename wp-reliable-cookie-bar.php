@@ -4,7 +4,7 @@
  * Plugin Name: WP Realiable Cookie Bar
  * Plugin URI: https://github.com/sergioloporto/WP-Reliable-Cookie-Bar/
  * Description: A customizable cookie bar
- * Version: 1.0
+ * Version: 1.1
  * Author: Sergio Lo Porto
  * Author URI: https://github.com/sergioloporto
  * Text Domain: wprcb
