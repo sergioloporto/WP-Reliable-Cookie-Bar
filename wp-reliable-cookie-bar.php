@@ -4,7 +4,7 @@
  * Plugin Name: WP Realiable Cookie Bar
  * Plugin URI: https://github.com/sergioloporto/WP-Reliable-Cookie-Bar/
  * Description: A customizable cookie bar
- * Version: 1.1
+ * Version: 1.2
  * Author: Sergio Lo Porto
  * Author URI: https://github.com/sergioloporto
  * Text Domain: wprcb
@@ -28,7 +28,7 @@ function wprcb_inject_html_into_footer()
   $background_color = $options['wprcb_api_color_field_backgroundColor'] ? $options['wprcb_api_color_field_backgroundColor'] : '#000';
   $text_color = $options['wprcb_api_color_field_textColor'] ? $options['wprcb_api_color_field_textColor'] : '#fff';
   $bar_height = $options['wprcb_api_number_field_barHeight'] ? $options['wprcb_api_number_field_barHeight'] : '80';
-  $show_hide_border = $options['wprcb_api_boolean_showHide_border'] == 1 ? 'boder:none;' : 'border:inherit;';
+  $show_hide_border = $options['wprcb_api_boolean_showHide_border'] == 1 ? 'border:none;' : 'border:inherit;';
   $cookies_policy_url = $options['wprcb_api_text_field_cookiesURL'] ? $options['wprcb_api_text_field_cookiesURL'] : get_home_url();
   $cookies_policy_anchor = $options['wprcb_api_text_field_cookiesAnchor'] ? $options['wprcb_api_text_field_cookiesAnchor'] : 'Learn more';
 
