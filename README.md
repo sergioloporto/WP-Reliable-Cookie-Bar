@@ -30,6 +30,7 @@ Many people would like to enhance some functionality, add new ones, etc. Feel fr
 If you'd like the WP Reliable Cookie Bar to have new functionalities. You can open a new issue on GitHub.
 
 ## Changelog
+* Version: 1.3: enhanced css
 * Version: 1.2: Fixed typo and fixed css
 * Version: 1.1: Fixed position of text for some users
 * Version: 1.0: First release
