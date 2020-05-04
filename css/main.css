@@ -17,10 +17,11 @@
 .wprcb-content {
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 .wprcb-cookie-bar a.accept-button {
     background: #ffdbcd;
-    margin: 0 15px 0 15px;
+    margin: 15px;
     box-sizing: border-box;
     padding: 7px 15px 7px 15px;
     border-radius: 3px;

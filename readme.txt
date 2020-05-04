@@ -34,6 +34,7 @@ If you'd like the WP Reliable Cookie Bar to have new functionalities. You can op
 Coming soon
 
 ## Changelog
+* Version: 1.4: made text and button in a column + height fit-content
 * Version: 1.3: enhanced css
 * Version: 1.2: Fixed typo and fixed css
 * Version: 1.1: Fixed position of text for some users
